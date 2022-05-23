@@ -1,0 +1,57 @@
+.header {
+    background: #8e2de2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #4a00e0,
+        #8e2de2
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size 0;
+    height: 100px;
+}
+
+.header_title {
+    color: white;
+    text-decoration: none;
+    h1 {
+        margin: 0;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    text-decoration: none;
+    p {
+        margin-right: 20px;
+        transition: all 0.3s;
+        &:hover {
+            color: rgb(172, 0, 252);
+            cursor: pointer;
+        }
+    }
+}
+
+
+.social_icons {
+    display: flex;
+
+    img {
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+}
