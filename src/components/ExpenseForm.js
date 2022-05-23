@@ -11,6 +11,8 @@ export class ExpenseForm extends Component {
         this.state = {
             description: props.expense ? props.expense.description :'',
             kind: props.expense ? props.expense.kind :'',
+            img: props.expense ? props.expense.img :'',
+            cpu: props.expense ? props.expense.cpu :'',
             note: props.expense ? props.expense.note :'',
             amount: props.expense ? (props.expense.amount / 100).toString() :'',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
@@ -27,6 +29,16 @@ export class ExpenseForm extends Component {
     onKindChange = (e) => {
         const kind = e.target.value.toLowerCase();
         this.setState(() => ({kind}));
+    }
+
+    onImgChange = (e) => {
+        const img = e.target.value;
+        this.setState(() => ({img}));
+    }
+
+    onCpuChange = (e) => {
+        const cpu = e.target.value;
+        this.setState(() => ({cpu}));
     }
     onNoteChange = (e) => {
         const note = e.target.value;
@@ -59,6 +71,8 @@ export class ExpenseForm extends Component {
             this.props.onSubmit({
                 description: this.state.description,
                 kind: this.state.kind,
+                img: this.state.img,
+                cpu: this.state.cpu,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
@@ -87,6 +101,24 @@ export class ExpenseForm extends Component {
               onChange={this.onKindChange}
               />
 
+              <input
+              type="text"
+              placeholder="Brand Img URL"
+              className="text-input"
+              autoFocus
+              value= {this.state.img}
+              onChange={this.onImgChange}
+              />
+
+              <input
+              type="text"
+              placeholder="CPU"
+              className="text-input"
+              autoFocus
+              value= {this.state.cpu}
+              onChange={this.onCpuChange}
+              />
+
               <input 
               type="text"
               className="text-input"
@@ -94,6 +126,8 @@ export class ExpenseForm extends Component {
               value={this.state.amount}
               onChange={this.onAmountChange}
               />
+
+    
               
 
               <textarea

@@ -54,7 +54,7 @@ export class EditExpensePage extends React.Component {
       />
       </div>
       <div className="content-container">
-      <button className="btn-c"onClick={this.openModal}>Remove Expense</button>
+      <button className="btn-c"onClick={this.openModal}>Remove Product</button>
       </div>
       <Modal
       appElement={document.getElementById('root')}

@@ -12,12 +12,14 @@ export const startAddExpense = (expenseData = {}) => {
     const {
       description = '',
       kind = '',
+      img = '',
+      cpu = '',
       note = '',
       amount = 0,
       createdAt = 0
     } = expenseData;
 
-    const expense = { description, kind, note, amount, createdAt };
+    const expense = { description, kind, img, cpu, note, amount, createdAt };
 
     return database.ref(`expenses/laptop`).push(expense).then((ref) => {
       dispatch(addExpense({

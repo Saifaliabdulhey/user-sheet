@@ -5,10 +5,14 @@ import ExpensesSummary from "./ExpensesSummary";
 
 function Home() {
   return (
-    <div>
+    <div className="Home">
       <ExpensesSummary />
       <ExpenseListFilters />
       <ExpenseList />
+      <div className="backdrop-circle">
+      <div className="circle">
+      </div>
+      </div>
     </div>
   );
 }
