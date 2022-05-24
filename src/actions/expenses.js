@@ -13,13 +13,24 @@ export const startAddExpense = (expenseData = {}) => {
       description = '',
       kind = '',
       img = '',
+      ram = '',
+      graphics = '',
+      display = '',
+      storage = '',
+      op = '',
+      motherboard = '',
+      img1 = '',
+      img2 = '',
+      img3 = '',
+      youtube = '',
       cpu = '',
       note = '',
       amount = 0,
       createdAt = 0
     } = expenseData;
 
-    const expense = { description, kind, img, cpu, note, amount, createdAt };
+    const expense = { description, kind, img,ram,graphics, display, storage,op,
+      motherboard, img1, img2, img3, youtube, cpu, note, amount, createdAt };
 
     return database.ref(`expenses/laptop`).push(expense).then((ref) => {
       dispatch(addExpense({

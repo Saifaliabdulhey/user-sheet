@@ -28,13 +28,17 @@
     height: 12rem;
     padding: $s-size;
     text-decoration: none;
-    transition: background 0.3s ease;
+    color: rgba(0, 0, 0, 0.801);
     &:hover {
         background: #5500ffbd;
         color: #fff;
 
         .list-item_title {
             color: #fff;
+        }
+
+        .item_brand {
+            transform: scale(2);
         }
     }
 
@@ -49,7 +53,6 @@
 .list-item--message {
     align-items: center;
     justify-content: center;
-    color: white;
     padding: $m-size;
     &:hover {
         background: none;
@@ -61,17 +64,14 @@
     margin: 0;
     word-break: break-all;
     font-size: 22px;
-    color: #fff;
 }
 
 .list-item__sub-title {
-    color: white;
     font-size: $font-size-small;
 }
 
 .list-item__data {
     margin: $s-size 0 0 0;
-    color: rgb(0, 0, 0);
     @media (min-width: $desktop-breakpoint) {
         margin: 0;
         padding-left: $s-size;
@@ -80,12 +80,11 @@
 
 .item_brand {
     max-width: 110px;
-    opacity: 0.5;
     position: absolute;
     right: 30rem;
+    transition: all 0.3s ease;
     @media (max-width: $desktop-breakpoint) {
         width: 100px;
-        opacity: 0.5;
         position: absolute;
         right: 3rem;
     }
@@ -96,7 +95,6 @@
     margin: 0;
     width: 400px;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.815);
     @media (max-width: $desktop-breakpoint) {
         opacity: 0.8;
         word-break: break-all;
@@ -108,7 +106,6 @@
     height: 30px;
     width: 150px;
     // background-color: rgba(204, 0, 255, 0.233);
-    color: rgb(255, 255, 255);
     border-radius:5px;
     @media (max-width: $desktop-breakpoint) {
         width: 100px;

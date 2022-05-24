@@ -12,7 +12,16 @@ export class ExpenseForm extends Component {
             description: props.expense ? props.expense.description :'',
             kind: props.expense ? props.expense.kind :'',
             img: props.expense ? props.expense.img :'',
-            cpu: props.expense ? props.expense.cpu :'',
+            ram: props.expense ? props.expense.ram :'',
+            graphics: props.expense ? props.expense.graphics :'',
+            display: props.expense ? props.expense.display :'',
+            storage: props.expense ? props.expense.storage :'',
+            op: props.expense ? props.expense.op :'',
+            motherboard: props.expense ? props.expense.motherboard :'',
+            img1: props.expense ? props.expense.img1 :'',
+            img2: props.expense ? props.expense.img2 :'',
+            img3: props.expense ? props.expense.img3 :'',
+            youtube: props.expense ? props.expense.youtube :'',
             note: props.expense ? props.expense.note :'',
             amount: props.expense ? (props.expense.amount / 100).toString() :'',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
@@ -40,6 +49,48 @@ export class ExpenseForm extends Component {
         const cpu = e.target.value;
         this.setState(() => ({cpu}));
     }
+
+    onRamChange = (e) => {
+        const ram = e.target.value;
+        this.setState(() => ({ram}));
+    }
+    onGraphicsChange = (e) => {
+        const graphics = e.target.value;
+        this.setState(() => ({graphics}));
+    }
+    onDisplayChange = (e) => {
+        const display = e.target.value;
+        this.setState(() => ({display}));
+    }
+    onStorageChange = (e) => {
+        const storage = e.target.value;
+        this.setState(() => ({storage}));
+    }
+    onOpChange = (e) => {
+        const op = e.target.value;
+        this.setState(() => ({op}));
+    }
+    onMotherboardChange = (e) => {
+        const motherboard = e.target.value;
+        this.setState(() => ({motherboard}));
+    }
+    onImg1Change = (e) => {
+        const img1 = e.target.value;
+        this.setState(() => ({img1}));
+    }
+    onImg2Change = (e) => {
+        const img2 = e.target.value;
+        this.setState(() => ({img2}));
+    }
+    onImg3Change = (e) => {
+        const img3 = e.target.value;
+        this.setState(() => ({img3}));
+    }
+    onYoutubeChange = (e) => {
+        const youtube = e.target.value;
+        this.setState(() => ({youtube}));
+    }
+
     onNoteChange = (e) => {
         const note = e.target.value;
         this.setState(() => ({note}));
@@ -71,8 +122,17 @@ export class ExpenseForm extends Component {
             this.props.onSubmit({
                 description: this.state.description,
                 kind: this.state.kind,
-                img: this.state.img,
+                ram: this.state.ram,
+                graphics: this.state.graphics,
+                display: this.state.display,
+                storage: this.state.storage,
+                op: this.state.op,
+                motherboard: this.state.motherboard,
+                img1: this.state.img1,
+                img2: this.state.img2,
+                img3: this.state.img3,
                 cpu: this.state.cpu,
+                youtube: this.state.youtube,
                 amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
@@ -117,6 +177,94 @@ export class ExpenseForm extends Component {
               autoFocus
               value= {this.state.cpu}
               onChange={this.onCpuChange}
+              />
+
+              
+              <input
+              type="text"
+              placeholder="RAM"
+              className="text-input"
+              autoFocus
+              value= {this.state.ram}
+              onChange={this.onRamChange}
+              />
+              
+              <input
+              type="text"
+              placeholder="Graphics Cart"
+              className="text-input"
+              autoFocus
+              value= {this.state.graphics}
+              onChange={this.onGraphicsChange}
+              />
+              
+              <input
+              type="text"
+              placeholder="Display"
+              className="text-input"
+              autoFocus
+              value= {this.state.display}
+              onChange={this.onDisplayChange}
+              />
+              
+              <input
+              type="text"
+              placeholder="Storage"
+              className="text-input"
+              autoFocus
+              value= {this.state.storage}
+              onChange={this.onStorageChange}
+              />
+              
+              <input
+              type="text"
+              placeholder="OP"
+              className="text-input"
+              autoFocus
+              value= {this.state.op}
+              onChange={this.onOpChange}
+              />
+
+              <input
+              type="text"
+              placeholder="Motherboard"
+              className="text-input"
+              autoFocus
+              value= {this.state.motherboard}
+              onChange={this.onMotherboardChange}
+              />
+              <input 
+              type="text"
+              placeholder="product image 1"
+              className="text-input"
+              autoFocus
+              value= {this.state.img1}
+              onChange={this.onImg1Change}
+              />
+              <input
+              type="text"
+              placeholder="product image 2"
+              className="text-input"
+              autoFocus
+              value= {this.state.img2}
+              onChange={this.onImg2Change}
+              />
+              <input
+              type="text"
+              placeholder="product image 3"
+              className="text-input"
+              autoFocus
+              value= {this.state.img3}
+              onChange={this.onImg3Change}
+              />
+
+              <input
+              type="text"
+              placeholder="Youtube URL"
+              className="text-input"
+              autoFocus
+              value= {this.state.youtube}
+              onChange={this.onYoutubeChange}
               />
 
               <input 
