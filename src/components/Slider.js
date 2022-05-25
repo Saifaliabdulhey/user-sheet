@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import BtnSlider from './BtnSlider'
 import dataSlider from './dataSlider'
+import AOS from "aos";
 
 export default function Slider() {
 
@@ -28,6 +29,11 @@ export default function Slider() {
         setSlideIndex(index)
     }
 
+    useEffect(() => {
+        AOS.init({
+        });
+      }, []);
+
     return (
         <div className="container-slider">
             {dataSlider.map((obj, index) => {
@@ -37,9 +43,10 @@ export default function Slider() {
                     className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                     >
                     <div className="head_button_container">
-                    <h1>Wellcome to Naruto</h1>
-                    <p>We are here to help you with every thing you need! Just buy anything then you'll got your offer and special discount!</p>
-                    <button className="head_button">About Naruto</button>
+                    <h1 data-aos="fade-right" data-aos-offset="100" data-aos-duration="1800">Wellcome to Naruto</h1>
+                    <p data-aos="fade-left" data-aos-offset="100" data-aos-duration="2000">We are here to help you with every thing you need! Just buy anything then you'll got your offer and special discount!</p>
+                    <button data-aos-offset="100" data-aos="fade-up" data-aos-duration="3000"
+                    data-aos-anchor-placement="bottom-bottom" className="head_button">About Naruto</button>
                     </div>
                         <img 
                         src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 

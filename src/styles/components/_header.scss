@@ -1,7 +1,7 @@
 .header {
     position:fixed;
     backdrop-filter: blur(20px);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 0 0 10px 1px rgb(74, 0, 248);
+    // box-shadow: 0 0 10px 1px rgb(74, 0, 248);
     z-index: 9999;
     width: 100%;
     background: rgba(76, 0, 255, 0.329);
@@ -59,4 +59,18 @@
 
 .logo {
     width: 80px;
+    transition: all 3s ease-in-out !important;
+    animation: animate1 10s infinite linear;
+    
 }
+
+
+@keyframes animate1 {
+    from {
+         transform: rotate(359deg);
+     }
+     to {
+        transform: rotate(0deg);
+    }
+     
+    }

@@ -29,20 +29,37 @@ export class ExpenseListItem extends Component {
     this.setState({ modal: false })
   }
 
+  componentDidMount() {
+    // or simply just AOS.init();
+    AOS.init({
+    });
+  }
 
 
   render() {
     return (
       <div>
       <Link className='card-link' onClick={this.openModal}>
-        <div className="box-body">
+        <div className="box-body" data-aos="zoom-in-up" data-aos-duration="1000">
           <div className="box">
             <div className="glass"></div>
             <div className="content">
-              <div className="main"><img className="main_img" src={this.props.img1}/></div>
-              <strong className="brand">MSI</strong>
-               <h1 className="title">{this.props.description}</h1>
-               <h3>{this.props.cpu}</h3>
+              <div data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="1000"
+              data-aos-duration="1000" className="main"><img className="main_img" src={this.props.img1}/></div>
+              <strong data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="1800"
+              data-aos-duration="1800" className="brand">MSI</strong>
+               <h1 data-aos="fade-left"
+               data-aos-anchor="#example-anchor"
+               data-aos-offset="1000"
+               data-aos-duration="1000" className="title">{this.props.description}</h1>
+               <h3 data-aos="fade-left"
+               data-aos-anchor="#example-anchor"
+               data-aos-offset="1100"
+               data-aos-duration="1100">{this.props.cpu}</h3>
               <div className="price-holder"> <h2>{numeral(this.props.amount / 100).format('$0,0.00')}</h2> <s>$1,800</s></div>
             <button class="quick_button">Quick view</button>
               </div>
@@ -57,9 +74,9 @@ export class ExpenseListItem extends Component {
           className='modal'
           backdropClassName="my-backdrop-style"
         >
-          <div className='modal_container'>
+          <div data-aos="zoom-in" data-aos-duration="500" className='modal_container'>
             <div className='content1'>
-              <div className='images-container'>
+              <div  className='images-container'>
                 <img className='main-img' src={this.props.img1} />
                 <div className='img_links'>
                   <img src={this.props.img1} />
