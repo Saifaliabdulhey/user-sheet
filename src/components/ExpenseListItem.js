@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
@@ -7,6 +7,8 @@ import lenovo from '../images/laptop.png'
 import facebook1 from '../images/facebook1.png'
 import instagram1 from '../images/instagram1.png'
 import star from '../images/star.png'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -27,20 +29,25 @@ export class ExpenseListItem extends Component {
     this.setState({ modal: false })
   }
 
-  render() {
 
-    const youtube = this.props.youtube;
+
+  render() {
     return (
       <div>
-        <Link className="list-item" onClick={this.openModal}>
-          <div>
-            <img className="item_brand" src={this.props.img1} />
-            <h3 className="list-item__title"> {this.props.description} </h3>
-            <div className="note-div"><p className="list-item_title"> {this.props.cpu} </p></div>
-            <span className="list-item__sub-title">{moment(this.props.createdAt).format('MMMM Do, YYYY')}</span>
+      <Link className='card-link' onClick={this.openModal}>
+        <div className="box-body">
+          <div className="box">
+            <div className="glass"></div>
+            <div className="content">
+              <div className="main"><img className="main_img" src={this.props.img1}/></div>
+              <strong className="brand">MSI</strong>
+               <h1 className="title">{this.props.description}</h1>
+               <h3>{this.props.cpu}</h3>
+              <div className="price-holder"> <h2>{numeral(this.props.amount / 100).format('$0,0.00')}</h2> <s>$1,800</s></div>
+            <button class="quick_button">Quick view</button>
+              </div>
           </div>
-
-          <h3 className="list-item__data">{numeral(this.props.amount / 100).format('$0,0.00')}</h3>
+        </div>
         </Link>
         <Modal
           appElement={document.getElementById('root')}
@@ -51,7 +58,7 @@ export class ExpenseListItem extends Component {
           backdropClassName="my-backdrop-style"
         >
           <div className='modal_container'>
-            <div className='content'>
+            <div className='content1'>
               <div className='images-container'>
                 <img className='main-img' src={this.props.img1} />
                 <div className='img_links'>

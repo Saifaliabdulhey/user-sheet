@@ -1,4 +1,4 @@
-.content {
+.content1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,7 +20,7 @@
 }
 
 .main-img {
-    width: 14rem;
+    width: 24rem;
     margin: 20px;
     transform: scale(1);
     transition: all 0.3s;
@@ -36,7 +36,7 @@
     justify-content: center;
 
     img {
-        width: 70px;
+        width: 100px;
         margin: 20px;
         transform: scale(1);
         padding: 5px;
@@ -64,7 +64,7 @@
 
 hr {
     border-radius: 50%;
-    color: rgba(255, 255, 255, 0.623);
+    color: rgba(49, 1, 68, 0.623);
     margin: 15px;
 }
 
@@ -143,19 +143,13 @@ hr {
     }
 }
 
-.contact-us {
-    display: flex;
-
-    p {
-        margin: 20px 10px;
-    }
-}
 
 iframe {
     border: none;
     border-radius: 10px;
-    height: 370px;
-    width: 650px;
+    height: 320px;
+    width: 600px;
+    margin-top:5px;
 
     @media (max-width: 920px) {
         height: 250px;
@@ -165,7 +159,7 @@ iframe {
 }
 
 .modal {
-    background: rgba(4, 6, 37, 0.527);
+    background: #060c21;
     margin: auto;
     backdrop-filter: blur(40px);
     border-radius: 2%;
@@ -173,6 +167,7 @@ iframe {
     box-shadow: 0 0 5px 5px black;
     width: 80%;
     height: 70%;
+    z-index: 10;
 
 }
 

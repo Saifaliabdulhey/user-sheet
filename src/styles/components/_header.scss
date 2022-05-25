@@ -1,11 +1,10 @@
 .header {
-    background: #8e2de2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to right,
-        #4a00e0,
-        #8e2de2
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position:fixed;
+    backdrop-filter: blur(20px);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0 0 10px 1px rgb(74, 0, 248);
+    z-index: 9999;
+    width: 100%;
+    background: rgba(76, 0, 255, 0.329);
 }
 
 .header__content {
@@ -17,10 +16,11 @@
 }
 
 .header_title {
-    color: white;
+    color: rgb(152, 0, 253);
     text-decoration: none;
+    display: flex;
     h1 {
-        margin: 0;
+        margin: 10px;
     }
 }
 
@@ -54,4 +54,9 @@
             cursor: pointer;
         }
     }
+}
+
+
+.logo {
+    width: 80px;
 }

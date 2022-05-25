@@ -2,11 +2,12 @@ import React from "react";
 import ExpenseList from "./ExpenseList";
 import ExpenseListFilters from "./ExpenseListFilters";
 import ExpensesSummary from "./ExpensesSummary";
+import Slider from './Slider'
 
 function Home() {
   return (
     <div className="Home">
-      <ExpensesSummary />
+    <Slider />
       <ExpenseListFilters />
       <ExpenseList />
       <div className="backdrop-circle">

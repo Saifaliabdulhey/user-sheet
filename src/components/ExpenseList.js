@@ -4,19 +4,14 @@ import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../selectors/expenses';
 
 
-export const ExpenseList = (props) => (
-    <div className="content-container">
-        <div className="list-header">
-            <div className="show-for-mobile">Products</div>
-            <div className="show-for-desktop">Product</div>
-            <div className="show-for-desktop">Price</div>
-        </div>
 
+export const ExpenseList = (props) => (
+    <div className="cards-content">
         <div className="list-body">
             {
                 props.expenses.length === 0 ? (
                     <div className="list-item list-item--message">
-                        <span>No product</span>
+                        <span>No products</span>
                     </div>
                 ) : (
                     props.expenses.map((expense) => {

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 import instagram from '../images/instagram1.png'
 import face from '../images/face.png'
+import logo from '../images/logo1.png'
 
 
 export const Header = ({ startLogout }) => (
@@ -11,7 +12,8 @@ export const Header = ({ startLogout }) => (
         <div className="content-container" >
             <div className="header__content">
                 <Link className="header_title" to="/home" >
-                    <h1>Naruto</h1>
+                    <img className="logo" src={logo}/>
+                     <h1>Naruto</h1>
                 </Link>
                 <div className="social_icons">
                     <img src={instagram} />
