@@ -20,10 +20,8 @@ function AppRouter() {
  <Router history={history}>
   <Header />
       <Switch>
-      <Route path="/" exact component={LoginPage} />
       <Route path="/home" exact component={Home} />
-      <Route path="/redux" exact component={ReduxExpensify} />
-      <Route path="/contact" component={Contact} />
+      <Route path="/contact" exact component={Contact} />
       <Route path="/edit/:id" component={EditExpensePage} />
       <Route  component={Home} />
       </Switch>

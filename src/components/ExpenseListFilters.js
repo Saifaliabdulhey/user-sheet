@@ -71,6 +71,7 @@ export class ExpenseListFilters extends React.Component {
   render() {
     return (
             <div className="content-container">
+            
             <div className="input-group">
             <div className="input-group__item">
             <img className="search_img" src={search}/>

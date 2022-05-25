@@ -1,19 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 import instagram from '../images/instagram1.png'
 import face from '../images/face.png'
+import AOS from "aos";
 import logo from '../images/logo1.png'
 
 
-export const Header = ({ startLogout }) => (
-    <header className="header">
+export const Header = ({ startLogout }) => {
+    useEffect(() => {
+        AOS.init({
+        });
+      }, []);
+    return (
+            <header className="header">
         <div className="content-container" >
             <div className="header__content">
                 <Link className="header_title" to="/home" >
-                    <img className="logo" src={logo}/>
-                     <h1>Naruto</h1>
+                    <img data-aos="fade-right" data-aos-duration="1000" className="logo" src={logo}/>
+                     <h1 data-aos="fade-right" data-aos-duration="1000">Naruto</h1>
                 </Link>
                 <div className="social_icons">
                     <img src={instagram} />
@@ -22,8 +28,8 @@ export const Header = ({ startLogout }) => (
             </div>
         </div>
     </header>
-)
-
+    )
+}
 const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout())
 })
