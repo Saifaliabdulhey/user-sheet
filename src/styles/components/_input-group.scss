@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: $m-size;
-    margin-top: 200px;
+    margin-top: 100px;
     @media (min-width: $desktop-breakpoint) {
         flex-direction: row;
         margin-bottom: $l-size;

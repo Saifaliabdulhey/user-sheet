@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import search from '../images/search.png'
+import createHistory from 'history/createBrowserHistory';
 import { setTextFilter, setKindFilter, sortByAmount,sortByDate, setEndDate, setStartDate } from '../actions/filters';
 
 export class ExpenseListFilters extends React.Component {
@@ -22,22 +23,19 @@ export class ExpenseListFilters extends React.Component {
         this.props.setKindFilter('');
     }
 
-
-
-
+    
+    componentDidMount() {
+        this.props.setKindFilter('');
+        this.props.setTextFilter('');
+      }
 
     onSortChange = (e) => {
-        if(e.target.value === 'date') {
-            this.props.sortByDate(e.target.value);
-            this.props.setTextFilter('');
-            this.props.setKindFilter('');
-        }else if(e.target.value === 'amount') {
+            if(e.target.value === 'amount') {
             this.props.sortByAmount(e.target.value)
             this.props.setTextFilter('');
             this.props.setKindFilter('');
         }else if(e.target.value === 'msi') {
             this.props.setTextFilter(e.target.value);
-            this.props.setKindFilter('');
         }
         else if(e.target.value === 'hp') {
             this.props.setTextFilter(e.target.value);

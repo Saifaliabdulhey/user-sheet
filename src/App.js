@@ -33,7 +33,7 @@ const renderApp = () => {
 
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
-      if(history.location.pathname === '/'){
+      if(history.location.pathname === '/home'){
         history.push('/home')
       }else {
         history.push('/home')

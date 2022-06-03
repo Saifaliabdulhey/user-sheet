@@ -1,9 +1,7 @@
 import React, { Component, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 import numeral from 'numeral';
 import Modal from 'react-modal'
-import lenovo from '../images/laptop.png'
 import facebook1 from '../images/facebook1.png'
 import instagram1 from '../images/instagram1.png'
 import star from '../images/star.png'
@@ -74,7 +72,7 @@ export class ExpenseListItem extends Component {
           className='modal'
           backdropClassName="my-backdrop-style"
         >
-          <div data-aos="zoom-in" data-aos-duration="500" className='modal_container'>
+          <div  className='modal_container'>
             <div className='content1'>
               <div  className='images-container'>
                 <img className='main-img' src={this.props.img1} />

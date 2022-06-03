@@ -2,8 +2,7 @@ import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
-import instagram from '../images/instagram1.png'
-import face from '../images/face.png'
+import card from '../images/card.svg'
 import AOS from "aos";
 import logo from '../images/logo1.png'
 
@@ -22,8 +21,7 @@ export const Header = ({ startLogout }) => {
                      <h1 data-aos="fade-right" data-aos-duration="1000">Naruto</h1>
                 </Link>
                 <div className="social_icons">
-                    <img src={instagram} />
-                    <img src={face} />
+                    <img src={card} />
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import moment from "moment";
 
 // Get Visible expense
 
-const getVisibleExpenses = (expenses, { text, kind, sortBy, startDate, endDate }) => {
+const getVisibleExpenses = (expenses, { text, kind, classified, sortBy, startDate, endDate }) => {
   return expenses.filter((expense) => {
     const createdAtMoment = moment(expense.createdAt);
     const startDateMatch =
@@ -15,7 +15,12 @@ const getVisibleExpenses = (expenses, { text, kind, sortBy, startDate, endDate }
       const kindMatch = expense.kind
       .toLowerCase()
       .includes(kind.toLowerCase());
-    return startDateMatch && endDateMatch && textMatch && kindMatch;
+
+      const classifiedMatch = 'desktop'
+      .toLowerCase()
+      .includes(classified.toLowerCase());
+
+    return startDateMatch && endDateMatch && textMatch && kindMatch && classifiedMatch;
   })
     .sort((a, b) => {
       if (sortBy === "date") {

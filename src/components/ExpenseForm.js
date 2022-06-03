@@ -11,6 +11,7 @@ export class ExpenseForm extends Component {
         this.state = {
             description: props.expense ? props.expense.description :'',
             kind: props.expense ? props.expense.kind :'',
+            desktop: props.expense ? props.expense.desktop :'',
             img: props.expense ? props.expense.img :'',
             ram: props.expense ? props.expense.ram :'',
             graphics: props.expense ? props.expense.graphics :'',
@@ -24,7 +25,7 @@ export class ExpenseForm extends Component {
             youtube: props.expense ? props.expense.youtube :'',
             note: props.expense ? props.expense.note :'',
             amount: props.expense ? (props.expense.amount / 100).toString() :'',
-            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+            // createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: true,
             error: '',
         }
@@ -38,6 +39,11 @@ export class ExpenseForm extends Component {
     onKindChange = (e) => {
         const kind = e.target.value.toLowerCase();
         this.setState(() => ({kind}));
+    }
+
+    onDesktopChange = (e) => {
+        const desktop = e.target.value.toLowerCase();
+        this.setState(() => ({desktop}));
     }
 
     onImgChange = (e) => {
@@ -122,6 +128,7 @@ export class ExpenseForm extends Component {
             this.props.onSubmit({
                 description: this.state.description,
                 kind: this.state.kind,
+                desktop: this.state.desktop,
                 ram: this.state.ram,
                 graphics: this.state.graphics,
                 display: this.state.display,
@@ -134,7 +141,7 @@ export class ExpenseForm extends Component {
                 cpu: this.state.cpu,
                 youtube: this.state.youtube,
                 amount: parseFloat(this.state.amount, 10) * 100,
-                createdAt: this.state.createdAt.valueOf(),
+                // createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
             })
         }
@@ -152,6 +159,7 @@ export class ExpenseForm extends Component {
               value= {this.state.description}
               onChange={this.onDescriptionChange}
               />
+
               <input
               type="text"
               placeholder="Type, Laptop, Desktop, Mobile ..."
@@ -160,6 +168,16 @@ export class ExpenseForm extends Component {
               value= {this.state.kind}
               onChange={this.onKindChange}
               />
+
+              <input
+              type="text"
+              placeholder="Type of the Prodect"
+              className="text-input"
+              autoFocus
+              value= {this.state.desktop}
+              onChange={this.onDesktopChange}
+              />
+
 
               <input
               type="text"

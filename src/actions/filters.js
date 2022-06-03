@@ -9,6 +9,10 @@ export const setTextFilter = (text = "") => ({
     type: "SET_KIND_FILTER",
     kind,
   });
+  export const setClassifiedFilter = (classified = "") => ({
+    type: "SET_CLASSIFIED_FILTER",
+    classified,
+  });
   
   // SORT_BY_DATE
   export const sortByDate = () => ({

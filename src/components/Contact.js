@@ -7,6 +7,7 @@ export class Contact extends React.Component {
   onSubmit = (expense) => {
     this.props.startAddExpense(expense);
     this.props.history.push("/home");
+    // console.log(this.props.history)
   };
   render() {
     return (
